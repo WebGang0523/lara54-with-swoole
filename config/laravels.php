@@ -147,8 +147,8 @@ return [
     */
 
     'websocket' => [
-        'enable' => false,
-        // 'handler' => XxxWebSocketHandler::class,
+        'enable' => true,
+        'handler' => \App\Services\WebSocketService::class,
     ],
 
     /*
@@ -306,5 +306,7 @@ return [
         'enable_coroutine'   => false,
         'upload_tmp_dir'     => @is_writable('/dev/shm/') ? '/dev/shm' : '/tmp',
         'http_compression'   => false,
+        'heartbeat_idle_time'      => 600,
+        'heartbeat_check_interval' => 60,
     ],
 ];
