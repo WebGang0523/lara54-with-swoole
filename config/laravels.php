@@ -133,7 +133,15 @@ return [
     |
     */
 
-    'event_handlers' => [],
+    'event_handlers' => [
+        'WorkerStart' => \App\Listeners\WorkerStartEventListener::class,
+    ],
+
+    'events' => [
+        \App\Events\TestEvent::class => [
+            \App\Listeners\TestEventListener::class,
+        ]
+    ],
 
     /*
     |--------------------------------------------------------------------------
