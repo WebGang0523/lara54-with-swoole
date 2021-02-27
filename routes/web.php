@@ -27,3 +27,10 @@ Route::get('/event/test', function () {
     $success = \Hhxsv5\LaravelS\Swoole\Task\Event::fire($event);
     var_dump($success);
 });
+
+Route::get('/danmu', function() {
+    return view('danmu');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
