@@ -13,8 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::get('/robot', function (Request $request) {
+        $info = $request->input('info');
+        $userid = $request->input('id');
+        $key = config('services.turingapi.key');
+        $url = config('services.turingapi.url');
+        $client = new \GuzzleHttp\Client();
+        $perception = ["inputText"=>["text" => $info]];
+        $userInfo = ["apiKey"=>$key,"userId"=>$userid];
+        $response = $client->request('POST', $url, [
+            'json' => compact("perception","userInfo")
+        ]);
+        return response()->json(['data' => $response->getBody()->getContents()]);
+    });
 });
 
 Route::post('/register', 'AuthController@register');

@@ -199,10 +199,8 @@ const store = new Vuex.Store({
                 const robotdata = JSON.parse(res.data.data);
                 let msg = '';
                 // 分类信息
-                if (robotdata.code === 100000) {
-                    msg = robotdata.text;
-                } else if (robotdata.code === 200000) {
-                    msg = robotdata.text + robotdata.url;
+                if (robotdata.intent.code > 10000) {
+                    msg = robotdata.results[0].values.text;
                 } else {
                     msg = '暂不支持此类对话';
                 }

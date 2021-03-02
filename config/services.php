@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'turingapi' => [
+        'url' => 'http://openapi.tuling123.com/openapi/api/v2',
+        'key' => env('ROBOT_KEY')
+    ]
 ];
