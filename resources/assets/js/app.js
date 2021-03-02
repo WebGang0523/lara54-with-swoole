@@ -63,7 +63,8 @@ socket.on('connect', async () => {
             await store.commit('setTotal', 0);
             await store.dispatch('getAllMessHistory', {
                 current: 1,
-                roomid: roomId
+                roomid: roomId,
+                api_token: token
             });
         }
     }

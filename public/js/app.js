@@ -10111,7 +10111,8 @@ __WEBPACK_IMPORTED_MODULE_5__socket__["a" /* default */].on('connect', _asyncToG
                     _context.next = 19;
                     return __WEBPACK_IMPORTED_MODULE_4__store__["a" /* default */].dispatch('getAllMessHistory', {
                         current: 1,
-                        roomid: roomId
+                        roomid: roomId,
+                        api_token: token
                     });
 
                 case 19:
@@ -34744,7 +34745,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                   this.getSvgModal.$root.$options.clear();
                   this.$store.commit("setSvgModal", null);
                   this.$router.push({ path: "/" });
-                  __WEBPACK_IMPORTED_MODULE_5__socket__["a" /* default */].emit("login", { name: name });
+                  __WEBPACK_IMPORTED_MODULE_5__socket__["a" /* default */].emit("login", { name: name, api_token: res.data.message.api_token });
                 } else {
                   Object(__WEBPACK_IMPORTED_MODULE_2__components_Alert__["a" /* default */])({
                     content: res.data.message
@@ -37025,10 +37026,8 @@ var store = new __WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */].Store({
                                     msg = '';
                                     // 分类信息
 
-                                    if (robotdata.code === 100000) {
-                                        msg = robotdata.text;
-                                    } else if (robotdata.code === 200000) {
-                                        msg = robotdata.text + robotdata.url;
+                                    if (robotdata.intent.code > 10000) {
+                                        msg = robotdata.results[0].values.text;
                                     } else {
                                         msg = '暂不支持此类对话';
                                     }
