@@ -28,14 +28,14 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+//
+//        Event::listen('laravels.received_request', function (Request $request, $app) {
+//            $request->query->set('get_key', 'swoole-get-param');// 修改 GET 请求参数
+//            $request->request->set('post_key', 'swoole-post-param'); // 修改 POST 请求参数
+//        });
 
-        Event::listen('laravels.received_request', function (Request $request, $app) {
-            $request->query->set('get_key', 'swoole-get-param');// 修改 GET 请求参数
-            $request->request->set('post_key', 'swoole-post-param'); // 修改 POST 请求参数
-        });
-
-        Event::listen('laravels.generated_response', function (Request $request, Response $response, $app) {
-            $response->headers->set('header-key', 'swoole-header');
-        });
+//        Event::listen('laravels.generated_response', function (Request $request, Response $response, $app) {
+//            $response->headers->set('header-key', 'swoole-header');
+//        });
     }
 }
