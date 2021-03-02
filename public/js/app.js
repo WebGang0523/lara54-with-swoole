@@ -34635,7 +34635,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.login {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-image: url(\"//s3.qiufengh.com/webchat/bg.jpg\");\n  background-size: 100% 100%;\n  background-position: center center;\n}\n.login .mu-appbar {\n  text-align: center;\n}\n.login .mu-appbar .mu-flat-button-label {\n  font-size: 20px;\n}\n.login .content {\n  width: 80%;\n  margin: 70px auto 20px;\n}\n.login .content .mu-text-field {\n  width: 100%;\n}\n.login .content .mu-raised-button {\n  min-width: 80px;\n  display: block;\n  width: 100%;\n  margin: 0 auto;\n  -webkit-transition: all 0.375s;\n  transition: all 0.375s;\n}\n.login .content .mu-raised-button.loading {\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n}\n", ""]);
+exports.push([module.i, "\n.btn-radius {\n  width: 100%;\n  height: 40px;\n  margin-top: 20px;\n  border: 1px solid rgba(255,255,255,0.38);\n  background: rgba(255,255,255,0.02);\n  color: #000;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 50px;\n}\n.login {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-image: url(\"https://s3.qiufengh.com/avatar/272.jpeg\");\n  background-size: 100% 100%;\n  background-position: center center;\n}\n.login .mu-appbar {\n  text-align: center;\n}\n.login .mu-appbar .mu-flat-button-label {\n  font-size: 20px;\n}\n.login .content {\n  width: 80%;\n  margin: 70px auto 20px;\n}\n.login .content .mu-text-field {\n  width: 100%;\n}\n.login .content .mu-raised-button {\n  min-width: 80px;\n  display: block;\n  width: 100%;\n  margin: 0 auto;\n  -webkit-transition: all 0.375s;\n  transition: all 0.375s;\n}\n.login .content .mu-raised-button.loading {\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n}\n.login .content .tip-user {\n  width: 100%;\n  text-align: center;\n  margin-top: 20px;\n  color: #000;\n}\n", ""]);
 
 // exports
 
@@ -34725,15 +34725,15 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                   });
                   this.$store.commit("setUserInfo", {
                     type: "userid",
-                    value: res.data.user.email
+                    value: res.data.message.email
                   });
                   this.$store.commit("setUserInfo", {
                     type: "token",
-                    value: res.data.user.api_token
+                    value: res.data.message.api_token
                   });
                   this.$store.commit("setUserInfo", {
                     type: "src",
-                    value: res.data.user.avatar
+                    value: res.data.message.avatar
                   });
                   this.getSvgModal.$root.$options.clear();
                   this.$store.commit("setSvgModal", null);
@@ -36257,7 +36257,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.btn-radius {\n  width: 100%;\n  height: 40px;\n  margin-top: 20px;\n  border: 1px solid rgba(255,255,255,0.38);\n  background: rgba(255,255,255,0.02);\n  color: #fff;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 50px;\n}\n.header {\n  height: 50px;\n}\n.content .mu-text-field-input {\n  color: #fff;\n}\n.content .mu-text-field.has-label .mu-text-field-label.float {\n  color: rgba(255,255,255,0.38);\n}\n.content .mu-text-field-label {\n  color: #fff;\n}\n.content .mu-text-field-line {\n  background-color: rgba(255,255,255,0.38);\n}\n.content .mu-text-field-focus-line {\n  background-color: #fff;\n}\n.content .tip-user {\n  width: 100%;\n  text-align: center;\n  margin-top: 20px;\n  color: #fff;\n}\n.register {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-image: url(\"//s3.qiufengh.com/webchat/bg.jpg\");\n  background-size: 100% 100%;\n  background-position: center center;\n}\n.register .mu-appbar {\n  text-align: center;\n}\n.register .mu-appbar .mu-flat-button-label {\n  font-size: 20px;\n}\n.register .content {\n  width: 80%;\n  margin: 70px auto 20px;\n}\n.register .content .mu-text-field {\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.btn-radius {\n  width: 100%;\n  height: 40px;\n  margin-top: 20px;\n  border: 1px solid rgba(255,255,255,0.38);\n  background: rgba(255,255,255,0.02);\n  color: #000;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 50px;\n}\n.header {\n  height: 50px;\n}\n.content .mu-text-field-input {\n  color: #fff;\n}\n.content .mu-text-field.has-label .mu-text-field-label.float {\n  color: rgba(255,255,255,0.38);\n}\n.content .mu-text-field-label {\n  color: #fff;\n}\n.content .mu-text-field-line {\n  background-color: rgba(255,255,255,0.38);\n}\n.content .mu-text-field-focus-line {\n  background-color: #fff;\n}\n.content .tip-user {\n  width: 100%;\n  text-align: center;\n  margin-top: 20px;\n  color: #000;\n}\n.register {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-image: url(\"https://s3.qiufengh.com/avatar/272.jpeg\");\n  background-size: 100% 100%;\n  background-position: center center;\n}\n.register .mu-appbar {\n  text-align: center;\n}\n.register .mu-appbar .mu-flat-button-label {\n  font-size: 20px;\n}\n.register .content {\n  width: 80%;\n  margin: 70px auto 20px;\n}\n.register .content .mu-text-field {\n  width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -36330,7 +36330,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 src = "//s3.qiufengh.com/avatar/" + Math.ceil(Math.random() * 272) + ".jpeg";
 
                 if (!(name !== "" && password !== "")) {
-                  _context.next = 23;
+                  _context.next = 24;
                   break;
                 }
 
@@ -36346,10 +36346,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 res = _context.sent;
 
                 if (!(res.status === "success")) {
-                  _context.next = 19;
+                  _context.next = 20;
                   break;
                 }
 
+                console.log(res);
                 Object(__WEBPACK_IMPORTED_MODULE_4__components_Toast__["a" /* default */])({
                   content: res.data.message,
                   timeout: 1000,
@@ -36357,39 +36358,39 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 });
                 this.$store.commit("setUserInfo", {
                   type: "userid",
-                  value: res.data.user.email
+                  value: res.data.message.email
                 });
                 this.$store.commit("setUserInfo", {
                   type: "token",
-                  value: res.data.user.api_token
+                  value: res.data.message.api_token
                 });
                 this.$store.commit("setUserInfo", {
                   type: "src",
-                  value: res.data.user.avatar
+                  value: res.data.message.avatar
                 });
                 this.getSvgModal.$root.$options.clear();
                 this.$store.commit("setSvgModal", null);
                 this.$router.push({ path: "/" });
                 __WEBPACK_IMPORTED_MODULE_6__socket__["a" /* default */].emit("login", { name: name });
-                _context.next = 21;
+                _context.next = 22;
                 break;
 
-              case 19:
-                _context.next = 21;
+              case 20:
+                _context.next = 22;
                 return Object(__WEBPACK_IMPORTED_MODULE_3__components_Alert__["a" /* default */])({
                   content: res.data.message
                 });
 
-              case 21:
-                _context.next = 24;
+              case 22:
+                _context.next = 25;
                 break;
 
-              case 23:
+              case 24:
                 Object(__WEBPACK_IMPORTED_MODULE_3__components_Alert__["a" /* default */])({
                   content: "账号密码不能为空"
                 });
 
-              case 24:
+              case 25:
               case "end":
                 return _context.stop();
             }

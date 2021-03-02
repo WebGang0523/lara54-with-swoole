@@ -49,15 +49,15 @@ export default {
           });
           this.$store.commit("setUserInfo", {
               type: "userid",
-              value: res.data.user.email
+              value: res.data.message.email
           });
           this.$store.commit("setUserInfo", {
               type: "token",
-              value: res.data.user.api_token
+              value: res.data.message.api_token
           });
           this.$store.commit("setUserInfo", {
             type: "src",
-            value: res.data.user.avatar
+            value: res.data.message.avatar
           });
           this.getSvgModal.$root.$options.clear();
           this.$store.commit("setSvgModal", null);
@@ -98,13 +98,25 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .btn-radius {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.02);
+    color: #000;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+  }
+
 .login {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-image: url('//s3.qiufengh.com/webchat/bg.jpg');
+  background-image: url('https://s3.qiufengh.com/avatar/272.jpeg');
   background-size: 100% 100%;
   background-position: center center;
 
@@ -136,6 +148,13 @@ export default {
         height: 80px;
         border-radius: 50%;
       }
+    }
+
+    .tip-user {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      color: #000;
     }
   }
 }

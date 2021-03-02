@@ -8,10 +8,14 @@
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_500440_9oye91czwt8.css">
+
     <title>Laravel学院在线聊天室</title>
 
     <script type='text/javascript'>
-        window.Laravel = "<?php echo json_encode(['csrfToken' => csrf_token(),]); ?>";
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
     </script>
 </head>
 <body>
