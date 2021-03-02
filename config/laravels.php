@@ -140,6 +140,9 @@ return [
     'events' => [
         \App\Events\TestEvent::class => [
             \App\Listeners\TestEventListener::class,
+        ],
+        \App\Events\MessageReceived::class => [
+            \App\Listeners\MessageListener::class,
         ]
     ],
 
@@ -156,7 +159,7 @@ return [
 
     'websocket' => [
         'enable' => true,
-        'handler' => \App\Handlers\WebSocketHandler::class,
+        'handler' => \App\Services\WebSocket\WebSocketHandler::class,
     ],
 
     /*
