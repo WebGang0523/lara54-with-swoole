@@ -23256,11 +23256,22 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
 
   methods: {
-    handleChange: function handleChange(val) {
-      this.bottomNav = val;
+    // handleChange(val) {
+    //   this.bottomNav = val;
+    // },
+    getPath: function getPath() {
+      var path = this.$route.path;
+      if (path.indexOf('home') > -1) {
+        this.bottomNav = 'nearby';
+      } else {
+        this.bottomNav = 'recents';
+      }
     }
   },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(["istab"]))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(["istab"])),
+  watch: {
+    '$route': 'getPath'
+  }
 });
 
 /***/ }),
@@ -23289,10 +23300,7 @@ var render = function() {
                 [
                   _c(
                     "mu-bottom-nav",
-                    {
-                      attrs: { value: _vm.bottomNav },
-                      on: { change: _vm.handleChange }
-                    },
+                    { attrs: { value: _vm.bottomNav } },
                     [
                       _c("mu-bottom-nav-item", {
                         attrs: {
@@ -30440,9 +30448,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("mu-list-item-title", [
-                  _vm._v("客服大白(微信群，作者联系方式，找我)")
-                ]),
+                _c("mu-list-item-title", [_vm._v("客服大白")]),
                 _vm._v(" "),
                 _c(
                   "mu-list-item-action",

@@ -5,7 +5,7 @@
     <!--tab选项卡-->
     <div class="app-bottom" v-if="istab">
       <mu-paper>
-        <mu-bottom-nav :value="bottomNav" @change="handleChange">
+        <mu-bottom-nav :value="bottomNav">
           <mu-bottom-nav-item value="recents" title="主页" icon="restore" to="/"/>
           <mu-bottom-nav-item value="nearby" title="我的" icon="location_on" to="/home"/>
         </mu-bottom-nav>
@@ -23,12 +23,23 @@ export default {
     };
   },
   methods: {
-    handleChange(val) {
-      this.bottomNav = val;
+    // handleChange(val) {
+    //   this.bottomNav = val;
+    // },
+    getPath(){
+      let path = this.$route.path;
+      if (path.indexOf('home') > -1) {
+          this.bottomNav = 'nearby';
+      }else{
+         this.bottomNav = 'recents';
+      }
     }
   },
   computed: {
     ...mapState(["istab"])
+  },
+  watch: {
+    '$route':'getPath'
   }
 };
 </script>
