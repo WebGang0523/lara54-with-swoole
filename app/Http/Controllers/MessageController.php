@@ -30,12 +30,27 @@ class MessageController extends Controller
         $limit = 20;  // 每页显示20条消息
         $skip = ($current - 1) * 20;  // 从第多少条消息开始
         // 分页查询消息
-        $messageData = Message::where('room_id', $roomId)->skip($skip)->take($limit)->orderBy('created_at', 'desc')->get();
+        $messages = Message::where('room_id', $roomId)->skip($skip)->take($limit)->orderBy('created_at', 'asc')->get();
+        $messagesData = [];
+        if ($messages) {
+            foreach ($messages as $item) {
+                $messagesData[] = [
+                    'id' => $item->id,
+                    'userid' => $item->user->email,
+                    'username' => $item->user->name,
+                    'src' => $item->user->avatar,
+                    'msg' => $item->msg,
+                    'img' => $item->img,
+                    'roomid' => $item->room_id,
+                    'time' => $item->created_at
+                ];
+            }
+        }
         // 返回响应信息
         return response()->json([
             'data' => [
                 'errno' => 0,
-                'data' => $messageData,
+                'data' => $messagesData,
                 'total' => $messageTotal,
                 'current' => $current
             ]
